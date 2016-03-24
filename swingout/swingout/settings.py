@@ -120,3 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+API_GOOGLE = 'AIzaSyD4gaXSgSApYE_KRap7tv-gxo6YICreCOc'
+API_JSON = os.path.join(BASE_DIR, 'swingout', 'client_secret.json')

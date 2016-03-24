@@ -16,7 +16,7 @@
 
 import pprint
 import sys
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 
 # For this example, the API key is provided as a command-line argument.
 api_key = sys.argv[1]
