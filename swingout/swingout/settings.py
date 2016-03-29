@@ -122,4 +122,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 API_GOOGLE = 'AIzaSyD4gaXSgSApYE_KRap7tv-gxo6YICreCOc'
-API_JSON = os.path.join(BASE_DIR, 'swingout', 'client_secret.json')
