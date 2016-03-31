@@ -10,7 +10,8 @@ class GoogleCalendar(object):
 
     def get_calendar_events(self, calendar_id):
         pageToken = None
+        maxResults = 2500
         events = self.service.events().list(calendarId=calendar_id,
-                                            pageToken=pageToken).execute()
+                                            pageToken=pageToken, maxResults=maxResults).execute()
         return events
 

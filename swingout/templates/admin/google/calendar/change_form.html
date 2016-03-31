@@ -1,0 +1,14 @@
+{% extends "admin/change_form.html" %}
+
+{% block field_sets %}
+{% for fieldset in adminform %}
+  {% include "admin/includes/fieldset.html" %}
+{% endfor %}
+
+<ul>
+    {% for d in data %}
+    <li>{{ d }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

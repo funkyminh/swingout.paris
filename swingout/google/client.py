@@ -1,15 +1,10 @@
-from oauth2client import client
-from django.conf import settings
-import os
+from google.calendar import GoogleCalendar
 
-CLIENT_SECRETS = os.path.join(os.path.dirname(
-    __file__), 'client_secret_terminal.json')
 
-FLOW = client.flow_from_clientsecrets(
-    CLIENT_SECRETS,
-    scope='https://www.googleapis.com/auth/calendar.readonly',
-    redirect_uri='http://localhost:8000/oauth2callback')
-
-auth_uri = FLOW.step1_get_authorize_url()
-self.redirect(auth_uri)
-credentials = FLOW.step2_exchange(auth_code)
+gc = GoogleCalendar()
+events = gc.get_calendar_events('{}'.format('7cqclq8acds1p9lirvovfug4lc@group.calendar.google.com'))
+print len(events['items'])
+for event in events['items']:
+    print event['id']
+    if 'summary' in event:
+        print event['summary']
