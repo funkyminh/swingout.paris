@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}                    
+
+<div class="row">
+	<div class="col-md-12">
+		<h1><a href="/">Calendars</a></h1>
+		<table class="table table-hover">    
+		<th>id</th>
+		<th>google id</th>
+		<th>summary</th>
+		<th>number events</th>		
+		{% for calendar in calendars %}
+		<tr>
+			<td><a href="/calendar/{{ calendar.id }}">{{ calendar.id }}</a></td>
+			<td>{{ calendar.google_calendar_id }}</td>
+			<td>{{ calendar.get_summary }}</td>
+			<td>{{ calendar.get_number_events }}</td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+
+{% endblock content %}
