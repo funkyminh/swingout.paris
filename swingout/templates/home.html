@@ -13,8 +13,8 @@
 		<tr>
 			<td><a href="/calendar/{{ calendar.id }}">{{ calendar.id }}</a></td>
 			<td>{{ calendar.google_calendar_id }}</td>
-			<td>{{ calendar.get_summary }}</td>
-			<td>{{ calendar.get_number_events }}</td>
+			<td>{{ calendar.get_summary.summary }}</td>
+			<td>{{ calendar.get_summary.length }}</td>
 		</tr>
 		{% endfor %}
 		</table>

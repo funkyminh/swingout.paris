@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from google.views import HomeView, CalendarView
+from google.views import HomeView, CalendarView, EventView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^calendar/$', HomeView.as_view()),
-    url(r'^calendar/(?P<calendar_id>[0-9]+)/$', view=CalendarView.as_view(), name="calendar"),    
+    url(r'^calendar/(?P<calendar_id>[0-9]+)/$', view=CalendarView.as_view(), name="calendar"),  
+    url(r'^event/$', EventView.as_view()),  
 ]

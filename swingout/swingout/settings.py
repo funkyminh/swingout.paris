@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'google',
 ]
 
@@ -71,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'swingout.wsgi.application'
 
-print BASE_DIR
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 

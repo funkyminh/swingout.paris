@@ -4,7 +4,7 @@ from google.models import Calendar
 
 class CalendarAdmin(admin.ModelAdmin):
     #list_display = ('google_calendar_id', 'summary', 'description', 'number_events', )
-    list_display = ('google_calendar_id', 'summary', )
+    list_display = ('google_calendar_id', 'summary', 'number_events')
 
     def change_view(self, request, object_id, form_url='', extra_context=None):
         extra_context = extra_context or {}
@@ -14,13 +14,13 @@ class CalendarAdmin(admin.ModelAdmin):
                                                       form_url, extra_context=extra_context)
 
     def summary(self, obj):
-        return obj.get_summary()
+        return obj.get_summary()['summary']
 
     def description(self, obj):
         return obj.get_description()
 
     def number_events(self, obj):
-        return obj.get_number_events()
+        return obj.get_summary()['length']
 
 
 class EventAdmin(admin.ModelAdmin):
